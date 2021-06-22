@@ -1,7 +1,7 @@
 ## Learning to Combine Per-Example Solutions for Neural Program Synthesis
 Disha Shrivastava, Hugo Larochelle, Daniel Tarlow
 
-This repository contains implementation and data for our work [Learning to Combine Per-Example Solutions for Neural Program Synthesis](). A block diagram of our approach can be found below. For more details, refer to the paper.
+This repository contains implementation and data for our work [Learning to Combine Per-Example Solutions for Neural Program Synthesis](https://arxiv.org/abs/2106.07175). A block diagram of our approach can be found below. For more details, refer to the paper.
 
 <p align="center">
  <img src="block_diagram.png" width=1000>
@@ -17,7 +17,7 @@ This repository contains implementation and data for our work [Learning to Combi
 ## Data
 
 ### Downloading data used in the paper
-* Download the data from [here](https://drive.google.com/file/d/1gjeHn0tXhm0XJgNb0-XI53Pf6VFiaBLJ/view?usp=sharing). Extract the data and place in the root folder. It contains two subfolders for E1 and E2, each containing the 30 test splits and training and validation data for learning GPS model and PE model.
+Download the data from [here](https://drive.google.com/file/d/1gjeHn0tXhm0XJgNb0-XI53Pf6VFiaBLJ/view?usp=sharing). Extract the data and place in the root folder. It contains two subfolders for E1 and E2, each containing the 30 test splits and training and validation data for learning GPS model and PE model.
 
 ### Generating training and validation programs
 #### Setting E1: Train programs up to length 4 and test programs of length = 4
@@ -45,7 +45,8 @@ After both these steps, we will have 12 datasets (3 x 2 X 2) to train the CA mod
 
 ## Training
 
-### Trained_Models for both E1 and E2 (can be downloaded from [here](https://drive.google.com/file/d/1ldTyBfZdpIZZ4fUYiu5INmQb__KwWRZb/view?usp=sharing))
+### Downloading trained models used in the paper
+Trained_Models can be downloaded from [here](https://drive.google.com/file/d/1ldTyBfZdpIZZ4fUYiu5INmQb__KwWRZb/view?usp=sharing). Extract and place in the root folder. It contains two subfolders for E1 and E2, each containing trained models for GPS, PEPS, N-PEPS and N-PEPS+U.
 
 ### Training the GPS and PE models
 Train GPS and PE models by running `scripts/train.py`. Depending on what model is being trained, change the training and validation data paths, batch_size and model_output_path in file params.py (see Appendix C.1 of the paper for hyperparameter values used in our experiments).
@@ -57,7 +58,23 @@ Use `scripts/train_aggregator.py` to train the CA module using the training aggr
 Use `scripts/solve_problems.py` for doing inference on the test splits. Vary the `agg_type` argument in the script to run inference on different methods. Based on the method, vary the `alpha` and `peps_timeout` values (see Appendix C.4 of paper for details of hyperparameters used in our experiments). The result file has a json dictionary line for each program predicted. The dictionary contains the predicted program and some details about the search, like the amount of time the search took and the final beam size.
 
 ## Analyzing results
-Use `scripts/analyze_solution.py` to collate the results from different test splits and different runs into a single csv file.
+Use `scripts/analyze_solution.py` to collate the results from different test splits and different runs into a single csv file (combined_results.csv) that can be used to easily filter out the rows of interest.
 
 ## Notes
 * We have build upon PCCoder implementation available at https://github.com/amitz25/PCCoder (MIT License)
+
+## Citation
+
+If you use our code, please consider citing us as below:
+
+```
+@misc{shrivastava2021learning,
+      title={Learning to Combine Per-Example Solutions for Neural Program Synthesis},
+      author={Disha Shrivastava and Hugo Larochelle and Daniel Tarlow},
+      year={2021},
+      eprint={2106.07175},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+
+```
