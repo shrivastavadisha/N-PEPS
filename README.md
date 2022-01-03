@@ -68,13 +68,14 @@ Use `scripts/analyze_solution.py` to collate the results from different test spl
 If you use our code, please consider citing us as below:
 
 ```
-@misc{shrivastava2021learning,
-      title={Learning to Combine Per-Example Solutions for Neural Program Synthesis},
-      author={Disha Shrivastava and Hugo Larochelle and Daniel Tarlow},
-      year={2021},
-      eprint={2106.07175},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{
+shrivastava2021learning,
+title={Learning to Combine Per-Example Solutions for Neural Program Synthesis},
+author={Disha Shrivastava and Hugo Larochelle and Daniel Tarlow},
+booktitle={Advances in Neural Information Processing Systems},
+editor={A. Beygelzimer and Y. Dauphin and P. Liang and J. Wortman Vaughan},
+year={2021},
+url={https://openreview.net/forum?id=4PK-St2iVZn}
 }
 
 ```
