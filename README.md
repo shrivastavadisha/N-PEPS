@@ -1,7 +1,7 @@
 ## Learning to Combine Per-Example Solutions for Neural Program Synthesis
 Disha Shrivastava, Hugo Larochelle, Daniel Tarlow
 
-This repository contains implementation and data for our work [Learning to Combine Per-Example Solutions for Neural Program Synthesis](https://arxiv.org/abs/2106.07175). A block diagram of our approach can be found below. For more details, refer to the paper.
+This repository contains implementation and data for our NeurIPS 2021 paper [Learning to Combine Per-Example Solutions for Neural Program Synthesis](https://arxiv.org/abs/2106.07175). A block diagram of our approach can be found below. For more details, refer to the paper.
 
 <p align="center">
  <img src="block_diagram.png" width=1000>
